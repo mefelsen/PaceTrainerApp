@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="settings.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/main.js"></script>
         <style>
             #footer
             {
@@ -33,18 +34,52 @@
         </style>
     </head>
     <body>
-      <div data-role="page" id="page1">
+      <div data-role="page" id="main">
         <div data-role="header">
           <h1> Pace Trainer </h1>
         </div> <!-- header -->
         <div data-role="main" class="ui-content">
+          <form id="num_times"># of Times<br>
+            <input type="text" value="0">
+          </form>
+          <br>
+          <form id="pace">Pace<br>
+            <input type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
+            <br>
+          </form>
+          <form id="interval">Interval<br>
+            <input type="text" value="mm:ss:ff" data-mask="__:__:__">
+            <br>
+          </form>
+          <select id="length">
+            <option value="0">25y</option>
+            <option value="1">25m</option>
+          </select>
+          <br>
+          <select id="distance">
+            <!--These options autopopulate. See populateDistances()-->
+          </select>
+          <br>
+          Start Color
+          <select id="startcolor">
+            <option value="0">Red</option>
+            <option value="1">Green</option>
+            <option value="2">Blue</option>
+          </select>
+          <br>
+          Race Color
+          <select id="racecolor">
+            <option value="0">Red</option>
+            <option value="1">Green</option>
+            <option value="2">Blue</option>
+          </select>
           <button onclick="location.href='index.html#page2'" id="settings"> Settings </button>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.0.0 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
-        
+
         <div data-role="page" id="page2">
         <div data-role="header">
           <h1 id="settop"> Settings </h1>
@@ -55,7 +90,7 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
-          <button onclick="location.href='index.html#page1'" id="back"> Go Back </button>
+          <button onclick="location.href='index.html#main'" id="back"> Go Back </button>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.0.0 </h2>
