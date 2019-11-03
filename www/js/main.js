@@ -1,8 +1,13 @@
+/** [Member of main.js]
+* Calls functions on startup of page
+*/
 window.onload = function() {
   populateDistances();
 }
 
-//Automatically populates distances for the distance drop down
+/** [Member of main.js]
+* Automatically populates distances for the distance drop down
+*/
 function populateDistances()
 {
   let distance_menu = document.getElementById("distance");
