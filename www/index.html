@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="settings.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/main.js"></script>
         <style>
             #footer
             {
@@ -22,10 +23,6 @@
                 color: white;
                 font-family: Helvetica, sans-serif;
             }
-            #settings
-            {
-                top: calc(100vh - 200px);
-            }
             #back
             {
                 top: calc(100vh - 272px);
@@ -33,18 +30,61 @@
         </style>
     </head>
     <body>
-      <div data-role="page" id="page1">
+      <div data-role="page" id="main">
         <div data-role="header">
           <h1> Pace Trainer </h1>
         </div> <!-- header -->
         <div data-role="main" class="ui-content">
+          <label id="num_times1"># of Times</label>
+          <form id="num_times">
+            <input type="text" value="0">
+          </form>
+          <br>
+          <label id="pace1">Pace</label>
+          <form id="pace">
+            <input type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
+            <br>
+          </form>
+          <label id="interval1">Interval</label>
+          <form id="interval">
+            <input type="text" value="mm:ss:ff" data-mask="__:__:__">
+            <br>
+          </form>
+          <label id="pool">Pool Length</label>
+          <select id="length">
+            <option value="0">25y</option>
+            <option value="1">25m</option>
+          </select>
+          <br>
+          <label id="dist">Distance</label>
+          <select id="distance">
+            <!--These options autopopulate. See populateDistances()-->
+          </select>
+          <br>
+          <label id="startc">Start Color</label>
+          <select id="startcolor">
+            <option></option>
+            <option value="0" id="op1">Red</option>
+            <option value="1" id="op2">Green</option>
+            <option value="2" id="op3">Blue</option>
+          </select>
+          <br>
+          <label id="racec">Race Color</label>
+          <select id="racecolor">
+            <option></option>
+            <option value="0" id="op4">Red</option>
+            <option value="1" id="op5">Green</option>
+            <option value="2" id="op6">Blue</option>
+          </select>
+          <br><br><br><br>
           <button onclick="location.href='index.html#page2'" id="settings"> Settings </button>
+          <br><br><br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.0.0 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
-        
+
         <div data-role="page" id="page2">
         <div data-role="header">
           <h1 id="settop"> Settings </h1>
@@ -55,7 +95,7 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
-          <button onclick="location.href='index.html#page1'" id="back"> Go Back </button>
+          <button onclick="location.href='index.html#main'" id="back"> Go Back </button>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.0.0 </h2>
