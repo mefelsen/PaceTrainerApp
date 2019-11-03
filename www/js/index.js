@@ -19,8 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        setTimeout(function() {window.location.href="page1.html";}, 2000);
-
+      
     },
     // Bind Event Listeners
     //
