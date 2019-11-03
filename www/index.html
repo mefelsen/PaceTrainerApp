@@ -23,10 +23,6 @@
                 color: white;
                 font-family: Helvetica, sans-serif;
             }
-            #settings
-            {
-                top: calc(100vh - 200px);
-            }
             #back
             {
                 top: calc(100vh - 272px);
@@ -39,43 +35,50 @@
           <h1> Pace Trainer </h1>
         </div> <!-- header -->
         <div data-role="main" class="ui-content">
-          <form id="num_times"># of Times<br>
+          <label id="num_times1"># of Times</label>
+          <form id="num_times">
             <input type="text" value="0">
           </form>
           <br>
-          <form id="pace">Pace<br>
+          <label id="pace1">Pace</label>
+          <form id="pace">
             <input type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
             <br>
           </form>
-          <form id="interval">Interval<br>
+          <label id="interval1">Interval</label>
+          <form id="interval">
             <input type="text" value="mm:ss:ff" data-mask="__:__:__">
             <br>
           </form>
-          Pool Length
+          <label id="pool">Pool Length</label>
           <select id="length">
             <option value="0">25y</option>
             <option value="1">25m</option>
           </select>
           <br>
-          Distance
+          <label id="dist">Distance</label>
           <select id="distance">
             <!--These options autopopulate. See populateDistances()-->
           </select>
           <br>
-          Start Color
+          <label id="startc">Start Color</label>
           <select id="startcolor">
-            <option value="0">Red</option>
-            <option value="1">Green</option>
-            <option value="2">Blue</option>
+            <option></option>
+            <option value="0" id="op1">Red</option>
+            <option value="1" id="op2">Green</option>
+            <option value="2" id="op3">Blue</option>
           </select>
           <br>
-          Race Color
+          <label id="racec">Race Color</label>
           <select id="racecolor">
-            <option value="0">Red</option>
-            <option value="1">Green</option>
-            <option value="2">Blue</option>
+            <option></option>
+            <option value="0" id="op4">Red</option>
+            <option value="1" id="op5">Green</option>
+            <option value="2" id="op6">Blue</option>
           </select>
+          <br><br><br><br>
           <button onclick="location.href='index.html#page2'" id="settings"> Settings </button>
+          <br><br><br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.0.0 </h2>
