@@ -81,6 +81,8 @@
           <br>
           <button>Stop</button>
           <br><br>
+          <button onclick="location.href='index.html#page3'" id="user_profile"> User Profile </button>
+          <br><br>
           <button onclick="location.href='index.html#page2'" id="settings"> Settings </button>
           <br><br><br>
         </div> <!-- main -->
@@ -105,6 +107,25 @@
           <h2> Version 1.0.0 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
+
+      <div data-role="page" id="page3">
+      <div data-role="header">
+        <h1 id="settop"> Profile </h1>
+      </div> <!-- header -->
+      <div data-role="main" class="ui-content">
+          <label id="lang">Select Workout Name </label>
+          <select id="user_exercise" onchange="getUserExercise();">>
+            <option></option>
+            <option value="exer_x" id="op_x">Exercise1</option>
+            <option value="exer_x" id="op_x">Exercise2</option>
+            <option value="exer_x" id="op_x">Exercise3</option>
+          </select>
+        <button onclick="location.href='index.html#main'" id="back"> Go Back </button>
+      </div> <!-- main -->
+      <div data-role="footer" id="footer">
+        <h2> Version 1.0.0 </h2>
+      </div> <!-- footer -->
+    </div> <!-- page -->
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
