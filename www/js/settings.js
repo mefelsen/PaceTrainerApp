@@ -8,8 +8,17 @@ function getSelectValue()
     {
         document.getElementById('settings').innerHTML = "Settings";
         document.getElementById('settop').innerHTML = "Settings";
+        document.getElementById('user_profile').innerHTML = "User Profile";
         document.getElementById('lang').innerHTML = "Language:";
-        document.getElementById('back').innerHTML = "Go Back";
+        document.getElementById('prof').innerHTML = "Profile";
+        document.getElementById('workout').innerHTML = "Select Workout Name";
+        document.getElementById('back1').innerHTML = "Go Back";
+        document.getElementById('back2').innerHTML = "Go Back";
+        document.getElementById('start').innerHTML = "Start";
+        document.getElementById('stop').innerHTML = "Stop";
+        document.getElementById('op_x').innerHTML = "Exercise #1";
+        document.getElementById('op_y').innerHTML = "Exercise #2";
+        document.getElementById('op_z').innerHTML = "Exercise #3";
         document.getElementById('op1').innerHTML = "Red";
         document.getElementById('op2').innerHTML = "Green";
         document.getElementById('op3').innerHTML = "Blue";
@@ -28,8 +37,17 @@ function getSelectValue()
     {
         document.getElementById('settings').innerHTML = "Ajustes";
         document.getElementById('settop').innerHTML = "Ajustes";
+        document.getElementById('user_profile').innerHTML = "Perfil";
         document.getElementById('lang').innerHTML = "Idioma:";
-        document.getElementById('back').innerHTML = "Regresar";
+        document.getElementById('prof').innerHTML = "Perfil";
+        document.getElementById('workout').innerHTML = "Elija Nombre del Ejercicio";
+        document.getElementById('back1').innerHTML = "Regresar";
+        document.getElementById('back2').innerHTML = "Regresar";
+        document.getElementById('start').innerHTML = "Comenzar";
+        document.getElementById('stop').innerHTML = "Parar";
+        document.getElementById('op_x').innerHTML = "Ejercicio #1";
+        document.getElementById('op_y').innerHTML = "Ejercicio #2";
+        document.getElementById('op_z').innerHTML = "Ejercicio #3";
         document.getElementById('op1').innerHTML = "Rojo";
         document.getElementById('op2').innerHTML = "Verde";
         document.getElementById('op3').innerHTML = "Azul";
