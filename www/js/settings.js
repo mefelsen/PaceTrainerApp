@@ -1,3 +1,6 @@
+ /**  [Member of settings.js]
+  * Get the user input to change the language
+  */
 function getSelectValue()
 {
     var langvalue = document.getElementById('langs').value;
