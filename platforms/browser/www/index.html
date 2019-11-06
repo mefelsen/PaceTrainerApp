@@ -1,60 +1,199 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/main.js"></script>
+        <style>
+            #footer
+            {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+            .ui-main, .ui-content
+            {
+                min-height: calc(100vh - 88.76px);
+                background: #333333;
+                color: white;
+                font-family: Helvetica, sans-serif;
+            }
+            #back1
+            {
+                top: calc(100vh - 272px);
+            }
+            #back2
+            {
+                top: calc(100vh - 272px);
+            }
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            .dropbtn {
+              background-color: #4CAF50;
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #3e8e41;
+            }
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Virtual Pace Trainer Mobile</title>
-</head>
+            #myInput {
+              box-sizing: border-box;
+              background-image: url('searchicon.png');
+              background-position: 14px 12px;
+              background-repeat: no-repeat;
+              font-size: 16px;
+              padding: 14px 20px 12px 45px;
+              border: none;
+              border-bottom: 1px solid #ddd;
+            }
 
-<body>
-    <div class="app">
-        <h1>Virtual Pace Trainer</h1>
-        <div id="jayhawk" class="blink">
-            <p class="event listening">Loading</p>
-            <p class="event received">Done</p>
-        </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
+            #myInput:focus {outline: 3px solid #ddd;}
 
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f6f6f6;
+              min-width: 230px;
+              overflow: auto;
+              border: 1px solid #ddd;
+              z-index: 1;
+            }
+
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+
+            .dropdown a:hover {background-color: #ddd;}
+
+            .show {display: block;}
+        </style>
+    </head>
+    <body>
+      <div data-role="page" id="main">
+        <div data-role="header">
+          <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn"> ≡ </button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Settings</a>
+            </div>
+          </div>
+        <h1>Pace Trainer</h1>
+        </div> <!-- header -->
+        <div data-role="main" class="ui-content">
+          <label id="num_times1"># of Times</label>
+          <form id="num_times">
+            <input type="text" value="0">
+          </form>
+          <br>
+          <label id="pace1">Pace</label>
+          <form id="pace">
+            <input type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
+            <br>
+          </form>
+          <label id="interval1">Interval</label>
+          <form id="interval">
+            <input type="text" value="mm:ss:ff" data-mask="__:__:__">
+            <br>
+          </form>
+          <label id="pool">Pool Length</label>
+          <select id="length">
+            <option value="0">25y</option>
+            <option value="1">25m</option>
+          </select>
+          <br>
+          <label id="dist">Distance</label>
+          <select id="distance">
+            <!--These options autopopulate. See populateDistances()-->
+          </select>
+          <br>
+          <label id="startc">Start Color</label>
+          <select id="startcolor">
+            <option></option>
+            <option value="0" id="op1">Red</option>
+            <option value="1" id="op2">Green</option>
+            <option value="2" id="op3">Blue</option>
+          </select>
+          <br>
+          <label id="racec">Race Color</label>
+          <select id="racecolor">
+            <option></option>
+            <option value="0" id="op4">Red</option>
+            <option value="1" id="op5">Green</option>
+            <option value="2" id="op6">Blue</option>
+          </select>
+          <br>
+          <button id="start">Start</button>
+          <br>
+          <button id="stop">Stop</button>
+          <br><br>
+          <button onclick="location.href='index.html#page3'" id="user_profile"> User Profile </button>
+          <br><br>
+          <button onclick="location.href='index.html#page2'" id="settings"> Settings </button>
+          <br><br><br>
+        </div> <!-- main -->
+        <div data-role="footer" id="footer">
+          <h2> Version 1.3 </h2>
+        </div> <!-- footer -->
+      </div> <!-- page -->
+
+        <div data-role="page" id="page2">
+        <div data-role="header">
+          <h1 id="settop"> Settings </h1>
+        </div> <!-- header -->
+        <div data-role="main" class="ui-content">
+            <label id="lang">Language: </label>
+            <select id="langs" onchange="getSelectValue();">
+                <option value="1">English</option>
+                <option value="2">Español</option>
+            </select>
+          <button onclick="location.href='index.html#main'" id="back1"> Go Back </button>
+        </div> <!-- main -->
+        <div data-role="footer" id="footer">
+          <h2> Version 1.3 </h2>
+        </div> <!-- footer -->
+      </div> <!-- page -->
+
+      <div data-role="page" id="page3">
+      <div data-role="header">
+        <h1 id="prof"> Profile </h1>
+      </div> <!-- header -->
+      <div data-role="main" class="ui-content">
+          <label id="workout">Select Workout Name </label>
+          <select id="user_exercise" onchange="getUserExercise();">>
+            <option></option>
+            <option value="exer_x" id="op_x">Exercise1</option>
+            <option value="exer_x" id="op_y">Exercise2</option>
+            <option value="exer_x" id="op_z">Exercise3</option>
+          </select>
+        <button onclick="location.href='index.html#main'" id="back2"> Go Back </button>
+      </div> <!-- main -->
+      <div data-role="footer" id="footer">
+        <h2> Version 1.3 </h2>
+      </div> <!-- footer -->
+    </div> <!-- page -->
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
 </html>
