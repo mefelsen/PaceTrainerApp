@@ -3,6 +3,7 @@
 */
 window.onload = function() {
   populateDistances();
+  connectBT();
 }
 
 /** [Member of main.js]
@@ -20,4 +21,9 @@ function populateDistances()
     item.value = i_string;
     distance_menu.add(item);
   }
+}
+
+function connectBT()
+{
+  bluetoothSerial.connect("AA:BB:CC:DD:EE:FF", connectSuccess, connectFailure);
 }
