@@ -83,10 +83,11 @@
             .dropdown a:hover {background-color: #ddd;}
 
             .show {display: block;}
+
         </style>
     </head>
     <body>
-      <div data-role="page" id="main">
+      <div data-role="page" id="main" data-prev="" data-next="#page4">
         <div data-role="header">
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
@@ -94,7 +95,6 @@
               <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
               <a href="#about">About</a>
               <a onclick="location.href='index.html#page3'">Profiles</a>
-              <a onclick="location.href='index.html#page4'">Breakout</a>
               <a onclick="location.href='index.html#page2'">Settings</a>
             </div>
           </div>
@@ -193,7 +193,7 @@
       </div> <!-- footer -->
     </div> <!-- page -->
 
-    <div data-role="page" id="page4">
+    <div data-role="page" id="page4" data-prev="#main" data-next="">
     <div data-role="header">
       <h1 id="breakout"> Breakout </h1>
     </div> <!-- header -->
