@@ -43,7 +43,7 @@ function construct()
 
   let num_times = document.getElementById("num_times_val").value
   //Formatting input to be 2 characters
-  if(num_times.length != 1)
+  if(num_times.length == 1)
   {
     command_str = command_str + "0" + num_times; //0 + a number 1-9
   }
@@ -71,6 +71,28 @@ function construct()
 
   command_str += document.getElementById("startcolor").value;
   command_str += document.getElementById("racecolor").value;
+
+  let breakout_dist = document.getElementById("slider").value;
+  //Must be formatted as a 2 digit number
+  if(breakout_dist.length == 1)
+  {
+    command_str = command_str + "0" + breakout_dist;
+  }
+  else
+  {
+    command_str += breakout_dist;
+  }
+
+  let percentage = document.getElementById("breakout_percent").value;
+  //Must be formatted as a 2 digit number
+  if(percentage.length == 1)
+  {
+    command_str = command_str + "0" + percentage;
+  }
+  else
+  {
+    command_str += percentage;
+  }
 
   console.log(command_str.length)
   return command_str;

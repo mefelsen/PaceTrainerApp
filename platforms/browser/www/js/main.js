@@ -1,9 +1,9 @@
 /** [Member of main.js]
 * Calls functions on startup of page
 */
-window.onload = function() {
+window.onload = function()
+{
   populateDistances();
-  connectBT();
 }
 
 /** [Member of main.js]
@@ -23,7 +23,64 @@ function populateDistances()
   }
 }
 
-function connectBT()
+/** [Member of main.js]
+* Called when start button is pressed
+*/
+function start()
 {
-  bluetoothSerial.connect("AA:BB:CC:DD:EE:FF", connectSuccess, connectFailure);
+  let str = construct();
+  console.log(str);
+}
+
+/** [Member of main.js]
+* Constructs a string which will be sent serially via bluetooth to
+* the microcontroller
+*/
+function construct()
+{
+  let command_str = "";
+  command_str += document.getElementById("length").value;
+
+  let num_times = document.getElementById("num_times_val").value
+  //Formatting input to be 2 characters
+  if(num_times.length != 1)
+  {
+    command_str = command_str + "0" + num_times; //0 + a number 1-9
+  }
+  else
+  {
+    command_str += num_times; //a number 10-99
+  }
+
+  command_str += document.getElementById("pace").value;
+  command_str += document.getElementById("interval").value;
+
+  let dist = document.getElementById("distance").value;
+  if(dist.length == 4)
+  {
+    command_str += dist;
+  }
+  else if(dist.length == 3)
+  {
+    command_str = command_str + "0" + dist;
+  }
+  else if(dist.length == 2)
+  {
+    command_str = command_str + "00" + dist;
+  }
+
+  command_str += document.getElementById("startcolor").value;
+  command_str += document.getElementById("racecolor").value;
+
+  console.log(command_str.length)
+  return command_str;
+}
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
 }

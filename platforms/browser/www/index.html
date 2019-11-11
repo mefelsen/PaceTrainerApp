@@ -83,21 +83,19 @@
             .dropdown a:hover {background-color: #ddd;}
 
             .show {display: block;}
+
         </style>
     </head>
     <body>
-      <div data-role="page" id="main">
+      <div data-role="page" id="main" data-prev="" data-next="#page4">
         <div data-role="header">
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown" class="dropdown-content">
               <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
               <a href="#about">About</a>
-              <a href="#base">Base</a>
-              <a href="#blog">Blog</a>
-              <a href="#contact">Contact</a>
-              <a href="#custom">Custom</a>
-              <a href="#support">Settings</a>
+              <a onclick="location.href='index.html#page3'">Profiles</a>
+              <a onclick="location.href='index.html#page2'">Settings</a>
             </div>
           </div>
         <h1>Pace Trainer</h1>
@@ -105,17 +103,17 @@
         <div data-role="main" class="ui-content">
           <label id="num_times1"># of Times</label>
           <form id="num_times">
-            <input type="text" value="0">
+            <input type="text" id="num_times_val" value="1">
           </form>
           <br>
           <label id="pace1">Pace</label>
-          <form id="pace">
-            <input type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
+          <form>
+            <input id="pace" type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
             <br>
           </form>
           <label id="interval1">Interval</label>
-          <form id="interval">
-            <input type="text" value="mm:ss:ff" data-mask="__:__:__">
+          <form>
+            <input id="interval" type="text" value="mm:ss:ff" data-mask="__:__:__">
             <br>
           </form>
           <label id="pool">Pool Length</label>
@@ -145,14 +143,14 @@
             <option value="2" id="op6">Blue</option>
           </select>
           <br>
-          <button id="start">Start</button>
-          <br>
+          <div>
+          <button id="start" onclick="start()">Start</button>
           <button id="stop">Stop</button>
+          </div>
           <br><br>
           <button onclick="location.href='index.html#page3'" id="user_profile"> User Profile </button>
           <br><br>
-          <button onclick="location.href='index.html#page2'" id="settings"> Settings </button>
-          <br><br><br>
+          <br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.3 </h2>
@@ -194,6 +192,20 @@
         <h2> Version 1.3 </h2>
       </div> <!-- footer -->
     </div> <!-- page -->
+
+    <div data-role="page" id="page4" data-prev="#main" data-next="">
+    <div data-role="header">
+      <h1 id="breakout"> Breakout </h1>
+    </div> <!-- header -->
+    <div data-role="main" class="ui-content">
+        <div class="slidecontainer">
+          <input type="range" min="1" max="15" value="1" class="slider" id="myRange">
+        </div>
+    </div> <!-- main -->
+    <div data-role="footer" id="footer">
+      <h2> Version 1.3 </h2>
+    </div> <!-- footer -->
+  </div> <!-- page -->
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
