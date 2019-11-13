@@ -29,6 +29,7 @@ function populateDistances()
 function start()
 {
   let str = construct();
+  console.log(validateInput());
   console.log(str);
 }
 
@@ -94,8 +95,64 @@ function construct()
     command_str += percentage;
   }
 
-  console.log(command_str.length)
+  //console.log(command_str.length)
   return command_str;
+}
+
+/** [Member of main.js]
+* Checks that all inputs are filled out and are in a valid format
+* @post returns true if valid, false if invalid
+*/
+function validateInput()
+{
+  let distance = document.getElementById("distance").value;
+  if(distance == "")
+  {
+    console.log(distance == undefined + '\n');
+    return false;
+  }
+  let length = document.getElementById("length").value;
+  if(length == "")
+  {
+    return false;
+  }
+  let num_times = document.getElementById("num_times_val").value;
+  if(num_times == undefined || num_times.length > 2)
+  {
+    return false;
+  }
+
+  let pace = document.getElementById("pace").value;
+  if(pace === "" || pace.length != 8)
+  {
+    return false;
+  }
+
+  let interval = document.getElementById("interval").value;
+  if(interval === "" || interval.length != 8)
+  {
+    return false;
+  }
+
+  let scolor = document.getElementById("startcolor").value;
+  if(scolor == "")
+  {
+    return false;
+  }
+
+  let rcolor = document.getElementById("racecolor").value;
+  if(rcolor == "")
+  {
+    return false;
+  }
+
+  let percent = document.getElementById("breakout_percent").value;
+  if(percent == "" || percent.length > 2)
+  {
+    return false;
+  }
+
+  return true;
 }
 
 var slider = document.getElementById("myRange");
