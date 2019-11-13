@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Blank App</title>
+        <title>Pace Trainer</title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
         <script src="js/settings.js"></script>
         <script src="js/main.js"></script>
         <style>
@@ -107,15 +108,18 @@
           </form>
           <br>
           <label id="pace1">Pace</label>
-          <form>
-            <input id="pace" type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
+          <input type="text" id="pace">
+            <script>
+              $(function()
+              {$('input[id$="pace"]').inputmask("hh:mm:ss", {placeholder: "mm:ss:ff", insertMode: false, showMaskOnHover: false,hourFormat: 12});});
+            </script>
             <br>
-          </form>
           <label id="interval1">Interval</label>
-          <form>
-            <input id="interval" type="text" value="mm:ss:ff" data-mask="__:__:__">
-            <br>
-          </form>
+          <input type="text" id="interval">
+            <script>
+              $(function()
+              {$('input[id$="interval"]').inputmask("hh:mm:ss", {placeholder: "mm:ss:ff", insertMode: false, showMaskOnHover: false,hourFormat: 12});});
+            </script>
           <label id="pool">Pool Length</label>
           <select id="length">
             <option value="0">25y</option>
