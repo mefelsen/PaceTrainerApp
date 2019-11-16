@@ -30,6 +30,10 @@ function start()
 {
   let str = construct();
   console.log(validateInput());
+  if(validateInput())
+  {
+
+  }
   console.log(str);
 }
 
