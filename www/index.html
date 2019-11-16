@@ -88,25 +88,25 @@
         </style>
     </head>
     <body>
+    <!--
       <div data-role="page" id="splash">
       <div data-role="header">
-      </div> <!-- header -->
+      </div>
       <div data-role="main" class="ui-content">
         Splash Screen<br>
         Connecting to Bluetooth...
-      </div> <!-- main -->
+      </div>
       <div data-role="footer" id="footer">
         <h2> Version 1.3 </h2>
-      </div> <!-- footer -->
-    </div> <!-- page -->
+      </div>
+    </div>
+    -->
       <div data-role="page" id="main" data-prev="" data-next="#page4">
         <div data-role="header">
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-              <a href="#about">About</a>
-              <a onclick="location.href='index.html#page3'">Profiles</a>
+              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
               <a onclick="location.href='index.html#page2'">Settings</a>
             </div>
           </div>
@@ -163,8 +163,6 @@
           <button id="stop">Stop</button>
           </div>
           <br><br>
-          <button onclick="location.href='index.html#page3'" id="user_profile"> User Profile </button>
-          <br><br>
           <br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
@@ -174,6 +172,14 @@
 
         <div data-role="page" id="page2">
         <div data-role="header">
+          <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn"> ≡ </button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+              <a onclick="location.href='index.html#main'">Main Menu</a>
+              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
+            </div>
+          </div>
           <h1 id="settop"> Settings </h1>
         </div> <!-- header -->
         <div data-role="main" class="ui-content">
@@ -182,7 +188,7 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
-          <button onclick="location.href='index.html#main'" id="back1"> Go Back </button>
+
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.3 </h2>
@@ -191,6 +197,13 @@
 
       <div data-role="page" id="page3">
       <div data-role="header">
+        <div class="dropdown">
+          <button onclick="dropDown()" class="dropbtn"> ≡ </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a onclick="location.href='index.html#main'">Main Menu</a>
+            <a onclick="location.href='index.html#page2'">Settings</a>
+          </div>
+        </div>
         <h1 id="prof"> Profile </h1>
       </div> <!-- header -->
       <div data-role="main" class="ui-content">

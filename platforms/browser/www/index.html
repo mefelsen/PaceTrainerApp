@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Blank App</title>
+        <title>Pace Trainer</title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
         <script src="js/settings.js"></script>
         <script src="js/main.js"></script>
         <style>
@@ -87,35 +88,49 @@
         </style>
     </head>
     <body>
+    <!--
+      <div data-role="page" id="splash">
+      <div data-role="header">
+      </div>
+      <div data-role="main" class="ui-content">
+        Splash Screen<br>
+        Connecting to Bluetooth...
+      </div>
+      <div data-role="footer" id="footer">
+        <h2> Version 1.3 </h2>
+      </div>
+    </div>
+    -->
       <div data-role="page" id="main" data-prev="" data-next="#page4">
         <div data-role="header">
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-              <a href="#about">About</a>
-              <a onclick="location.href='index.html#page3'">Profiles</a>
+              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
               <a onclick="location.href='index.html#page2'">Settings</a>
             </div>
           </div>
         <h1>Pace Trainer</h1>
         </div> <!-- header -->
         <div data-role="main" class="ui-content">
-          <label id="num_times1"># of Times</label>
+          <label id="num_times1">Repetitions</label>
           <form id="num_times">
             <input type="text" id="num_times_val" value="1">
           </form>
           <br>
           <label id="pace1">Pace</label>
-          <form>
-            <input id="pace" type="text" value="mm:ss:ff" data-mask="__:__:__"> <!-- Figure out data mask -->
+          <input type="text" id="pace">
+            <script>
+              $(function()
+              {$('input[id$="pace"]').inputmask("hh:mm:ss", {placeholder: "mm:ss:ff", insertMode: false, showMaskOnHover: false});});
+            </script>
             <br>
-          </form>
           <label id="interval1">Interval</label>
-          <form>
-            <input id="interval" type="text" value="mm:ss:ff" data-mask="__:__:__">
-            <br>
-          </form>
+          <input type="text" id="interval">
+            <script>
+              $(function()
+              {$('input[id$="interval"]').inputmask("hh:mm:ss", {placeholder: "mm:ss:ff", insertMode: false, showMaskOnHover: false});});
+            </script>
           <label id="pool">Pool Length</label>
           <select id="length">
             <option value="0">25y</option>
@@ -148,8 +163,6 @@
           <button id="stop">Stop</button>
           </div>
           <br><br>
-          <button onclick="location.href='index.html#page3'" id="user_profile"> User Profile </button>
-          <br><br>
           <br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
@@ -159,6 +172,14 @@
 
         <div data-role="page" id="page2">
         <div data-role="header">
+          <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn"> ≡ </button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+              <a onclick="location.href='index.html#main'">Main Menu</a>
+              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
+            </div>
+          </div>
           <h1 id="settop"> Settings </h1>
         </div> <!-- header -->
         <div data-role="main" class="ui-content">
@@ -167,7 +188,7 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
-          <button onclick="location.href='index.html#main'" id="back1"> Go Back </button>
+
         </div> <!-- main -->
         <div data-role="footer" id="footer">
           <h2> Version 1.3 </h2>
@@ -199,13 +220,22 @@
     </div> <!-- header -->
     <div data-role="main" class="ui-content">
         <div class="slidecontainer">
-          <input type="range" min="1" max="15" value="1" class="slider" id="myRange">
+          <h1>Breakout Distance (m/y)</h1>
+          <input id="slider" type="range" min="1" max="15" value="1" class="slider" id="myRange">
+        </div>
+        <div>
+          <h1>Breakout Speed %</h1>
+          <form>
+            <input type="text" id="breakout_percent" value="40">
+          </form>
         </div>
     </div> <!-- main -->
     <div data-role="footer" id="footer">
       <h2> Version 1.3 </h2>
     </div> <!-- footer -->
   </div> <!-- page -->
+
+
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
