@@ -121,7 +121,7 @@ function validateInput()
     return false;
   }
   let num_times = document.getElementById("num_times_val").value;
-  if(num_times == undefined || num_times.length > 2)
+  if(num_times == "" || num_times.length > 2)
   {
     return false;
   }
