@@ -71,6 +71,8 @@ function getSelectValue()
 function dropDown()
 {
   document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("myDropdown2").classList.toggle("show");
+  document.getElementById("myDropdown3").classList.toggle("show");
 }
 
 /**  [Member of settings.js]
