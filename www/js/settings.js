@@ -6,13 +6,17 @@ function getSelectValue()
     var langvalue = document.getElementById('langs').value;
     if(langvalue == "1")
     {
-        document.getElementById('settings').innerHTML = "Settings";
         document.getElementById('settop').innerHTML = "Settings";
-        document.getElementById('user_profile').innerHTML = "User Profile";
         document.getElementById('lang').innerHTML = "Language:";
         document.getElementById('prof').innerHTML = "Profile";
+        document.getElementById('workprof').innerHTML = "Workout Profiles";
+        document.getElementById('settings').innerHTML = "Settings";
+        document.getElementById('workprof2').innerHTML = "Workout Profiles";
+        document.getElementById('settings2').innerHTML = "Settings";
+        document.getElementById('home').innerHTML = "Home Page";
+        document.getElementById('home2').innerHTML = "Home Page";
         document.getElementById('workout').innerHTML = "Select Workout Name";
-        document.getElementById('back1').innerHTML = "Go Back";
+        //document.getElementById('back1').innerHTML = "Go Back";
         document.getElementById('back2').innerHTML = "Go Back";
         document.getElementById('start').innerHTML = "Start";
         document.getElementById('stop').innerHTML = "Stop";
@@ -35,13 +39,17 @@ function getSelectValue()
     }
     else if(langvalue == "2")
     {
-        document.getElementById('settings').innerHTML = "Ajustes";
         document.getElementById('settop').innerHTML = "Ajustes";
-        document.getElementById('user_profile').innerHTML = "Perfil";
         document.getElementById('lang').innerHTML = "Idioma:";
         document.getElementById('prof').innerHTML = "Perfil";
+        document.getElementById('workprof').innerHTML = "Perfil";
+        document.getElementById('settings').innerHTML = "Ajustes";
+        document.getElementById('workprof2').innerHTML = "Perfil";
+        document.getElementById('settings2').innerHTML = "Ajustes";
+        document.getElementById('home').innerHTML = "Pagina Principal";
+        document.getElementById('home2').innerHTML = "Pagina Principal";
         document.getElementById('workout').innerHTML = "Elija Nombre del Ejercicio";
-        document.getElementById('back1').innerHTML = "Regresar";
+        //document.getElementById('back1').innerHTML = "Regresar";
         document.getElementById('back2').innerHTML = "Regresar";
         document.getElementById('start').innerHTML = "Comenzar";
         document.getElementById('stop').innerHTML = "Parar";

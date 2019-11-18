@@ -24,10 +24,10 @@
                 color: white;
                 font-family: Helvetica, sans-serif;
             }
-            #back1
+            /*#back1
             {
                 top: calc(100vh - 272px);
-            }
+            }*/
             #back2
             {
                 top: calc(100vh - 272px);
@@ -106,8 +106,8 @@
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown" class="dropdown-content">
-              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
-              <a onclick="location.href='index.html#page2'">Settings</a>
+              <a onclick="location.href='index.html#page3'"><label id="workprof">Workout Profiles</label></a>
+              <a onclick="location.href='index.html#page2'"><label id="settings">Settings</label></a>
             </div>
           </div>
         <h1>Pace Trainer</h1>
@@ -175,9 +175,9 @@
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown2" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-              <a onclick="location.href='index.html#main'">Main Menu</a>
-              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
+              <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+              <a onclick="location.href='index.html#main'"><label id="home">Home Page</label></a>
+              <a onclick="location.href='index.html#page3'"><label id="workprof2">Workout Profiles</label></a>
             </div>
           </div>
           <h1 id="settop"> Settings </h1>
@@ -200,8 +200,8 @@
         <div class="dropdown">
           <button onclick="dropDown()" class="dropbtn"> ≡ </button>
           <div id="myDropdown3" class="dropdown-content">
-            <a onclick="location.href='index.html#main'">Main Menu</a>
-            <a onclick="location.href='index.html#page2'">Settings</a>
+            <a onclick="location.href='index.html#main'"><label id="home2">Home Page</label></a>
+            <a onclick="location.href='index.html#page2'"><label id="settings2">Settings</label></a>
           </div>
         </div>
         <h1 id="prof"> Profile </h1>
