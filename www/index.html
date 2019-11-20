@@ -204,6 +204,8 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
+            <br>
+            <button onclick="deleteWorkouts()">Delete All Workouts</button>
 
         </div> <!-- main -->
         <div data-role="footer" id="footer">
@@ -225,7 +227,7 @@
       <div data-role="main" class="ui-content">
           <label id="workout">Select Workout Name </label>
           <select id="user_exercise" onchange="getUserExercise();">>
-            <option></option>
+              <option></option><!-- options generated using populateWorkouts() -->
           </select>
         <button onclick="location.href='index.html#main'" id="back2"> Go Back </button>
       </div> <!-- main -->

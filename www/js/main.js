@@ -197,3 +197,18 @@ function validateInput()
 
   return true;
 }
+
+/** [Member of main.js]
+* Deletes all workouts in dropdown and storage
+*/
+function deleteWorkouts()
+{
+    let container = document.getElementById("user_exercise");
+    while(container.length > 0)
+    {
+     container.removeChild(container.options[0]);   
+    }
+    localStorage.clear();
+    let option = document.createElement("option");
+    container.appendChild(option);
+}
