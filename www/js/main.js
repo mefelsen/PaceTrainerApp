@@ -4,6 +4,23 @@
 window.onload = function()
 {
   populateDistances();
+  populateWorkouts();
+}
+
+/** [Member of main.js]
+* Retrieves workouts from local storage and adds them back to workout drop down
+*/
+function populateWorkouts()
+{
+  let workout_container = document.getElementById("user_exercise");
+  for(let i = 0; i < localStorage.length; i++)
+  {
+    let item = localStorage.getItem(localStorage.key(i));
+    let option = document.createElement("option");
+    option.appendChild(document.createTextNode(item));
+    option.value = localStorage.getItem(item);
+    workout_container.appendChild(option);
+  }
 }
 
 /** [Member of main.js]
@@ -35,6 +52,28 @@ function start()
 
   }
   console.log(str);
+}
+
+/** [Member of main.js]
+* Stores the workout to be retrieved later
+*/
+function store()
+{
+  let str = "";
+  let workout_container = document.getElementById("user_exercise");
+  if(validateInput())
+  {
+    str = construct();
+    let option = document.createElement("option");
+    option.appendChild(document.createTextNode(document.getElementById("workout_name").value));
+    option.value = str;
+    workout_container.appendChild(option);
+    localStorage.setItem(document.getElementById("workout_name").value, option.value);
+  }
+  else
+  {
+    alert("Please correctly fill in all the values!");
+  }
 }
 
 /** [Member of main.js]

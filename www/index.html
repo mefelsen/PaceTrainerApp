@@ -172,6 +172,12 @@
           <button id="start" onclick="start()">Start</button>
           <button id="stop">Stop</button>
           </div>
+          <div>
+            <form id="workout">
+              <input type="text" id="workout_name">
+            </form>
+            <button onclick="store()">Store Workout</button>
+          </div>
           <br><br>
           <br>
         </div> <!-- main -->
@@ -220,9 +226,6 @@
           <label id="workout">Select Workout Name </label>
           <select id="user_exercise" onchange="getUserExercise();">>
             <option></option>
-            <option value="exer_x" id="op_x">Exercise1</option>
-            <option value="exer_x" id="op_y">Exercise2</option>
-            <option value="exer_x" id="op_z">Exercise3</option>
           </select>
         <button onclick="location.href='index.html#main'" id="back2"> Go Back </button>
       </div> <!-- main -->
