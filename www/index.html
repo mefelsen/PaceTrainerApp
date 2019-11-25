@@ -176,7 +176,7 @@
             <form id="workout">
               <input type="text" id="workout_name">
             </form>
-            <button onclick="store()">Store Workout</button>
+            <button id="storewk" onclick="store()">Store Workout</button>
           </div>
           <br><br>
           <br>
@@ -205,7 +205,7 @@
                 <option value="2">Español</option>
             </select>
             <br>
-            <button onclick="deleteWorkouts()">Delete All Workouts</button>
+            <button id="deletewk" onclick="deleteWorkouts()">Delete All Workouts</button>
 
         </div> <!-- main -->
         <div data-role="footer" id="footer">
@@ -225,7 +225,7 @@
         <h1 id="prof"> Profile </h1>
       </div> <!-- header -->
       <div data-role="main" class="ui-content">
-          <label id="workout">Select Workout Name </label>
+          <label id="workouts">Select Workout Name </label>
           <select id="user_exercise" onchange="getUserExercise();">>
               <option></option><!-- options generated using populateWorkouts() -->
           </select>
