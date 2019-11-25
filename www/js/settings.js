@@ -36,6 +36,7 @@ function getSelectValue()
         document.getElementById('pace1').innerHTML = "Pace";
         document.getElementById('num_times1').innerHTML = "# of Times";
         document.getElementById('connectButton').innerHTML = "Connect";
+        document.getElementById('mode').innerHTML = "Mode";
     }
     else if(langvalue == "2")
     {
@@ -69,9 +70,24 @@ function getSelectValue()
         document.getElementById('pace1').innerHTML = "Ritmo";
         document.getElementById('num_times1').innerHTML = "# de Repeticiones";
         document.getElementById('connectButton').innerHTML = "Conectar";
+        document.getElementById('mode').innerHTML = "Modo";
     }
 }
 
+function getModeValue()
+{
+  var modevalue = document.getElementById('modes').value;
+  if(modevalue == "1")
+  {
+    $('.ui-main, .ui-content').css("background" , "#cce5ff");
+    $('.ui-main, .ui-content').css("color" , "black");
+  }
+  else if(modevalue == "2")
+  {
+    $('.ui-main, .ui-content').css("background" , "#333333");
+    $('.ui-main, .ui-content').css("color" , "white");
+  }
+}
 
 /**  [Member of settings.js]
  * Toggle the dropDown menu
