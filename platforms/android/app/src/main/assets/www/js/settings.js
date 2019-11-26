@@ -6,19 +6,22 @@ function getSelectValue()
     var langvalue = document.getElementById('langs').value;
     if(langvalue == "1")
     {
-        document.getElementById('settings').innerHTML = "Settings";
         document.getElementById('settop').innerHTML = "Settings";
-        document.getElementById('user_profile').innerHTML = "User Profile";
         document.getElementById('lang').innerHTML = "Language:";
         document.getElementById('prof').innerHTML = "Profile";
-        document.getElementById('workout').innerHTML = "Select Workout Name";
-        document.getElementById('back1').innerHTML = "Go Back";
+        document.getElementById('workprof').innerHTML = "Workout Profiles";
+        document.getElementById('settings').innerHTML = "Settings";
+        document.getElementById('workprof2').innerHTML = "Workout Profiles";
+        document.getElementById('settings2').innerHTML = "Settings";
+        document.getElementById('home').innerHTML = "Home Page";
+        document.getElementById('home2').innerHTML = "Home Page";
+        document.getElementById('workouts').innerHTML = "Select Workout Name";
+        //document.getElementById('back1').innerHTML = "Go Back";
+        document.getElementById('storewk').innerHTML = "Store Workout";
+        document.getElementById('deletewk').innerHTML = "Delete All Workouts";
         document.getElementById('back2').innerHTML = "Go Back";
         document.getElementById('start').innerHTML = "Start";
         document.getElementById('stop').innerHTML = "Stop";
-        document.getElementById('op_x').innerHTML = "Exercise #1";
-        document.getElementById('op_y').innerHTML = "Exercise #2";
-        document.getElementById('op_z').innerHTML = "Exercise #3";
         document.getElementById('op1').innerHTML = "Red";
         document.getElementById('op2').innerHTML = "Green";
         document.getElementById('op3').innerHTML = "Blue";
@@ -32,22 +35,27 @@ function getSelectValue()
         document.getElementById('interval1').innerHTML = "Interval";
         document.getElementById('pace1').innerHTML = "Pace";
         document.getElementById('num_times1').innerHTML = "# of Times";
+        document.getElementById('connectButton').innerHTML = "Connect";
+        document.getElementById('mode').innerHTML = "Mode";
     }
     else if(langvalue == "2")
     {
-        document.getElementById('settings').innerHTML = "Ajustes";
         document.getElementById('settop').innerHTML = "Ajustes";
-        document.getElementById('user_profile').innerHTML = "Perfil";
         document.getElementById('lang').innerHTML = "Idioma:";
         document.getElementById('prof').innerHTML = "Perfil";
-        document.getElementById('workout').innerHTML = "Elija Nombre del Ejercicio";
-        document.getElementById('back1').innerHTML = "Regresar";
+        document.getElementById('workprof').innerHTML = "Perfil";
+        document.getElementById('settings').innerHTML = "Ajustes";
+        document.getElementById('workprof2').innerHTML = "Perfil";
+        document.getElementById('settings2').innerHTML = "Ajustes";
+        document.getElementById('home').innerHTML = "Pagina Principal";
+        document.getElementById('home2').innerHTML = "Pagina Principal";
+        document.getElementById('workouts').innerHTML = "Elija Nombre del Ejercicio";
+        //document.getElementById('back1').innerHTML = "Regresar";
+        document.getElementById('storewk').innerHTML = "Guardar Ejercicio";
+        document.getElementById('deletewk').innerHTML = "Borrar Todos Los Ejercicios";
         document.getElementById('back2').innerHTML = "Regresar";
         document.getElementById('start').innerHTML = "Comenzar";
         document.getElementById('stop').innerHTML = "Parar";
-        document.getElementById('op_x').innerHTML = "Ejercicio #1";
-        document.getElementById('op_y').innerHTML = "Ejercicio #2";
-        document.getElementById('op_z').innerHTML = "Ejercicio #3";
         document.getElementById('op1').innerHTML = "Rojo";
         document.getElementById('op2').innerHTML = "Verde";
         document.getElementById('op3').innerHTML = "Azul";
@@ -61,9 +69,25 @@ function getSelectValue()
         document.getElementById('interval1').innerHTML = "Intervalo";
         document.getElementById('pace1').innerHTML = "Ritmo";
         document.getElementById('num_times1').innerHTML = "# de Repeticiones";
+        document.getElementById('connectButton').innerHTML = "Conectar";
+        document.getElementById('mode').innerHTML = "Modo";
     }
 }
 
+function getModeValue()
+{
+  var modevalue = document.getElementById('modes').value;
+  if(modevalue == "1")
+  {
+    $('.ui-main, .ui-content').css("background" , "#cce5ff");
+    $('.ui-main, .ui-content').css("color" , "black");
+  }
+  else if(modevalue == "2")
+  {
+    $('.ui-main, .ui-content').css("background" , "#333333");
+    $('.ui-main, .ui-content').css("color" , "white");
+  }
+}
 
 /**  [Member of settings.js]
  * Toggle the dropDown menu
