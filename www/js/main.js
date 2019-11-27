@@ -61,7 +61,8 @@ function store()
 {
   let str = "";
   let workout_container = document.getElementById("user_exercise");
-  if(validateInput())
+  let workout_name = document.getElementById("workout_name").value;
+  if(validateInput() && workout_name != "")
   {
     str = construct();
     let option = document.createElement("option");
@@ -69,6 +70,7 @@ function store()
     option.value = str;
     workout_container.appendChild(option);
     localStorage.setItem(document.getElementById("workout_name").value, option.value);
+    alert("Workout Saved as " + document.getElementById("workout_name").value);
   }
   else
   {
@@ -206,9 +208,10 @@ function deleteWorkouts()
     let container = document.getElementById("user_exercise");
     while(container.length > 0)
     {
-     container.removeChild(container.options[0]);   
+     container.removeChild(container.options[0]);
     }
     localStorage.clear();
     let option = document.createElement("option");
     container.appendChild(option);
+    alert("All workouts deleted.");
 }

@@ -20,14 +20,14 @@
             .ui-main, .ui-content
             {
                 min-height: calc(100vh - 88.76px);
-                background: #333333;
-                color: white;
+                background: #cce5ff;
+                color: black;
                 font-family: Helvetica, sans-serif;
             }
-            #back1
+            /*#back1
             {
                 top: calc(100vh - 272px);
-            }
+            }*/
             #back2
             {
                 top: calc(100vh - 272px);
@@ -103,22 +103,11 @@
     -->
       <div data-role="page" id="main" data-prev="" data-next="#page4">
         <div data-role="header">
-          <div class="app">
-    <div id="ui">
-        <button id="connectButton">Connect</button>
-    </div>
-<div id="message">Hello.</div>
-</div>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script>
-    app.initialize();
-</script>
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown" class="dropdown-content">
-              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
-              <a onclick="location.href='index.html#page2'">Settings</a>
+              <a onclick="location.href='index.html#page3'"><label id="workprof">Workout Profiles</label></a>
+              <a onclick="location.href='index.html#page2'"><label id="settings">Settings</label></a>
             </div>
           </div>
         <h1>Pace Trainer</h1>
@@ -169,15 +158,32 @@
             <option value="2" id="op6">Blue</option>
           </select>
           <br>
+                  <div class="app">
+                      <div id="ui">
+                          <button id="connectButton">Connect</button>
+                      </div>
+                  <div id="message">Test.</div>
+                  </div>
+                  <script type="text/javascript" src="cordova.js"></script>
+                  <script type="text/javascript" src="js/index.js"></script>
+                  <script>
+                      app.initialize();
+                  </script>
           <div>
           <button id="start" onclick="start()">Start</button>
           <button id="stop">Stop</button>
+          </div>
+          <div>
+            <form id="workout">
+              <input type="text" id="workout_name">
+            </form>
+            <button id="storewk" onclick="store()">Store Workout</button>
           </div>
           <br><br>
           <br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
-          <h2> Version 1.3 </h2>
+          <h2> Version 1.7 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
 
@@ -186,9 +192,9 @@
           <div class="dropdown">
             <button onclick="dropDown()" class="dropbtn"> ≡ </button>
             <div id="myDropdown2" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-              <a onclick="location.href='index.html#main'">Main Menu</a>
-              <a onclick="location.href='index.html#page3'">Workout Profiles</a>
+              <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+              <a onclick="location.href='index.html#main'"><label id="home">Home Page</label></a>
+              <a onclick="location.href='index.html#page3'"><label id="workprof2">Workout Profiles</label></a>
             </div>
           </div>
           <h1 id="settop"> Settings </h1>
@@ -199,10 +205,17 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
+            <label id="mode">Mode: </label>
+            <select id="modes" onchange="getModeValue();">
+                <option value="1">Light</option>
+                <option value="2">Dark</option>
+            </select>
+            <br>
+            <button id="deletewk" onclick="deleteWorkouts()">Delete All Workouts</button>
 
         </div> <!-- main -->
         <div data-role="footer" id="footer">
-          <h2> Version 1.3 </h2>
+          <h2> Version 1.7 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
 
@@ -211,24 +224,21 @@
         <div class="dropdown">
           <button onclick="dropDown()" class="dropbtn"> ≡ </button>
           <div id="myDropdown3" class="dropdown-content">
-            <a onclick="location.href='index.html#main'">Main Menu</a>
-            <a onclick="location.href='index.html#page2'">Settings</a>
+            <a onclick="location.href='index.html#main'"><label id="home2">Home Page</label></a>
+            <a onclick="location.href='index.html#page2'"><label id="settings2">Settings</label></a>
           </div>
         </div>
         <h1 id="prof"> Profile </h1>
       </div> <!-- header -->
       <div data-role="main" class="ui-content">
-          <label id="workout">Select Workout Name </label>
+          <label id="workouts">Select Workout Name </label>
           <select id="user_exercise" onchange="getUserExercise();">>
-            <option></option>
-            <option value="exer_x" id="op_x">Exercise1</option>
-            <option value="exer_x" id="op_y">Exercise2</option>
-            <option value="exer_x" id="op_z">Exercise3</option>
+              <option></option><!-- options generated using populateWorkouts() -->
           </select>
         <button onclick="location.href='index.html#main'" id="back2"> Go Back </button>
       </div> <!-- main -->
       <div data-role="footer" id="footer">
-        <h2> Version 1.3 </h2>
+        <h2> Version 1.7 </h2>
       </div> <!-- footer -->
     </div> <!-- page -->
 
@@ -249,7 +259,7 @@
         </div>
     </div> <!-- main -->
     <div data-role="footer" id="footer">
-      <h2> Version 1.3 </h2>
+      <h2> Version 1.7 </h2>
     </div> <!-- footer -->
   </div> <!-- page -->
 

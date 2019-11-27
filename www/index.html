@@ -20,8 +20,8 @@
             .ui-main, .ui-content
             {
                 min-height: calc(100vh - 88.76px);
-                background: #333333;
-                color: white;
+                background: #cce5ff;
+                color: black;
                 font-family: Helvetica, sans-serif;
             }
             /*#back1
@@ -162,6 +162,7 @@
                       <div id="ui">
                           <button id="connectButton">Connect</button>
                       </div>
+                  <div id="message">Test.</div>
                   </div>
                   <script type="text/javascript" src="cordova.js"></script>
                   <script type="text/javascript" src="js/index.js"></script>
@@ -176,13 +177,13 @@
             <form id="workout">
               <input type="text" id="workout_name">
             </form>
-            <button onclick="store()">Store Workout</button>
+            <button id="storewk" onclick="store()">Store Workout</button>
           </div>
           <br><br>
           <br>
         </div> <!-- main -->
         <div data-role="footer" id="footer">
-          <h2> Version 1.3 </h2>
+          <h2> Version 1.7 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
 
@@ -204,12 +205,17 @@
                 <option value="1">English</option>
                 <option value="2">Español</option>
             </select>
+            <label id="mode">Mode: </label>
+            <select id="modes" onchange="getModeValue();">
+                <option value="1">Light</option>
+                <option value="2">Dark</option>
+            </select>
             <br>
-            <button onclick="deleteWorkouts()">Delete All Workouts</button>
+            <button id="deletewk" onclick="deleteWorkouts()">Delete All Workouts</button>
 
         </div> <!-- main -->
         <div data-role="footer" id="footer">
-          <h2> Version 1.3 </h2>
+          <h2> Version 1.7 </h2>
         </div> <!-- footer -->
       </div> <!-- page -->
 
@@ -225,14 +231,14 @@
         <h1 id="prof"> Profile </h1>
       </div> <!-- header -->
       <div data-role="main" class="ui-content">
-          <label id="workout">Select Workout Name </label>
+          <label id="workouts">Select Workout Name </label>
           <select id="user_exercise" onchange="getUserExercise();">>
               <option></option><!-- options generated using populateWorkouts() -->
           </select>
         <button onclick="location.href='index.html#main'" id="back2"> Go Back </button>
       </div> <!-- main -->
       <div data-role="footer" id="footer">
-        <h2> Version 1.3 </h2>
+        <h2> Version 1.7 </h2>
       </div> <!-- footer -->
     </div> <!-- page -->
 
@@ -253,7 +259,7 @@
         </div>
     </div> <!-- main -->
     <div data-role="footer" id="footer">
-      <h2> Version 1.3 </h2>
+      <h2> Version 1.7 </h2>
     </div> <!-- footer -->
   </div> <!-- page -->
 

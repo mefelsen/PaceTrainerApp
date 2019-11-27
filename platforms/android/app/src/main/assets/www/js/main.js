@@ -4,6 +4,23 @@
 window.onload = function()
 {
   populateDistances();
+  populateWorkouts();
+}
+
+/** [Member of main.js]
+* Retrieves workouts from local storage and adds them back to workout drop down
+*/
+function populateWorkouts()
+{
+  let workout_container = document.getElementById("user_exercise");
+  for(let i = 0; i < localStorage.length; i++)
+  {
+    let item = localStorage.getItem(localStorage.key(i));
+    let option = document.createElement("option");
+    option.appendChild(document.createTextNode(item));
+    option.value = localStorage.getItem(item);
+    workout_container.appendChild(option);
+  }
 }
 
 /** [Member of main.js]
@@ -35,6 +52,30 @@ function start()
 
   }
   console.log(str);
+}
+
+/** [Member of main.js]
+* Stores the workout to be retrieved later
+*/
+function store()
+{
+  let str = "";
+  let workout_container = document.getElementById("user_exercise");
+  let workout_name = document.getElementById("workout_name").value;
+  if(validateInput() && workout_name != "")
+  {
+    str = construct();
+    let option = document.createElement("option");
+    option.appendChild(document.createTextNode(document.getElementById("workout_name").value));
+    option.value = str;
+    workout_container.appendChild(option);
+    localStorage.setItem(document.getElementById("workout_name").value, option.value);
+    alert("Workout Saved as " + document.getElementById("workout_name").value);
+  }
+  else
+  {
+    alert("Please correctly fill in all the values!");
+  }
 }
 
 /** [Member of main.js]
@@ -157,4 +198,20 @@ function validateInput()
   }
 
   return true;
+}
+
+/** [Member of main.js]
+* Deletes all workouts in dropdown and storage
+*/
+function deleteWorkouts()
+{
+    let container = document.getElementById("user_exercise");
+    while(container.length > 0)
+    {
+     container.removeChild(container.options[0]);
+    }
+    localStorage.clear();
+    let option = document.createElement("option");
+    container.appendChild(option);
+    alert("All workouts deleted.");
 }
