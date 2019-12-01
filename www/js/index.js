@@ -17,7 +17,7 @@
  * under the License.
  */
  var app = {
-     macAddress: "A4:CF:12:75:C8:82",  // get your mac address from bluetoothSerial.list
+     macAddress: "A4:CF:12:75:A6:56",  // get your mac address from bluetoothSerial.list
      chars: "",
 
  /*
