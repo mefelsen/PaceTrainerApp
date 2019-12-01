@@ -46,12 +46,12 @@ function populateDistances()
 function start()
 {
   let str = construct();
-  console.log(validateInput());
+  //console.log(validateInput());
   if(validateInput())
   {
 
   }
-  console.log(str);
+  //console.log(str);
 }
 
 /** [Member of main.js]
@@ -214,4 +214,19 @@ function deleteWorkouts()
     let option = document.createElement("option");
     container.appendChild(option);
     alert("All workouts deleted.");
+}
+
+/** [Member of main.js]
+* Test Suite - Verifies all functionality
+*/
+function TestSuite()
+{
+    let valid_str = validateInput() ? "Passed" : "Failed";
+    console.log("Test: Are All Inputs Valid? " + valid_str);
+
+    let constr_str = construct();
+    let res = constr_str.length == 29 ? "Passed" : "Failed";
+    console.log("Test: Is the output to be sent via Bluetooth valid? " + res);
+
+    //More tests will need to be added
 }

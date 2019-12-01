@@ -99,6 +99,7 @@
 
          // here's the real action of the manageConnection function:
          bluetoothSerial.isConnected(disconnect, connect);
+         bluetoothSerial.write("hello world", success, failure);
      },
  /*
      subscribes to a Bluetooth serial listener for newline
@@ -158,5 +159,10 @@
      clear: function() {
          var display = document.getElementById("message");
          display.innerHTML = "";
+     },
+
+     serialSend: function() {
+       bluetoothSerial.write("hello world",success, failure);
+
      }
  };

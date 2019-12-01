@@ -223,10 +223,10 @@ function TestSuite()
 {
     let valid_str = validateInput() ? "Passed" : "Failed";
     console.log("Test: Are All Inputs Valid? " + valid_str);
-    
+
     let constr_str = construct();
     let res = constr_str.length == 29 ? "Passed" : "Failed";
     console.log("Test: Is the output to be sent via Bluetooth valid? " + res);
-    
+
     //More tests will need to be added
 }
