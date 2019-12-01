@@ -161,7 +161,7 @@
                   <div class="app">
                       <div id="ui">
                           <button id="connectButton">Connect</button>
-                          <button id="writeButton">write_Connect</button>
+                          
                       </div>
                   <div id="message">Test.</div>
                   </div>
@@ -169,12 +169,11 @@
                   <script type="text/javascript" src="js/index.js"></script>
                   <script>
                       app.initialize();
-                      app.serialSend();
                   </script>
-          <div>
+
           <button id="start" onclick="start()">Start</button>
           <button id="stop">Stop</button>
-          </div>
+
           <div>
             <form id="workout">
               <input type="text" id="workout_name">
@@ -215,7 +214,7 @@
             <br>
             <button id="deletewk" onclick="deleteWorkouts()">Delete All Workouts</button>
             <br>
-            <button onclick="TestSuite()">Test Suite</button>
+          <!--  <button onclick="TestSuite()">Test Suite</button> -->
 
         </div> <!-- main -->
         <div data-role="footer" id="footer">
