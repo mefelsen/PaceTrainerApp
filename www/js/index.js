@@ -249,6 +249,7 @@
      command_str += percentage;
    }
 
+   command_str += '\n';
    //console.log(command_str.length)
    return command_str;
  }
