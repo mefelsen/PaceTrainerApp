@@ -99,7 +99,10 @@
 
          // here's the real action of the manageConnection function:
          bluetoothSerial.isConnected(disconnect, connect);
-         bluetoothSerial.write("hello world", success, failure);
+         bluetoothSerial.write("hello world", function (data) {
+             app.display(data);
+         },
+         app.showError);
      },
  /*
      subscribes to a Bluetooth serial listener for newline
@@ -162,7 +165,10 @@
      },
 
      serialSend: function() {
-       bluetoothSerial.write("hello world",success, failure);
+       bluetoothSerial.write("hello world", function (data) {
+           app.display(data);
+       },
+       app.showError);
 
      }
  };
