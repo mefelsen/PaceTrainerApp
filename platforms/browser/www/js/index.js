@@ -180,6 +180,7 @@
    if(validateInput())
    {
         app.serialSend(str);
+        app.display(str);
    }
    else {
      console.log("Failed to validate");

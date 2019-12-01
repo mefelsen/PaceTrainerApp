@@ -84,7 +84,7 @@ function deleteWorkouts()
     alert("All workouts deleted.");
 }
 
-/** [Member of main.js]
+/* [Member of main.js]
 * Test Suite - Verifies all functionality
 *
 function TestSuite()
