@@ -208,8 +208,9 @@ function deleteWorkouts()
     alert("All workouts deleted.");
 }
 
-/* [Member of main.js]
+/** [Member of main.js]
 * Test Suite - Verifies all functionality
+* @pre a user profile must be created
 * Most code was inherited, making it difficult to test
 */
 function TestSuite()
@@ -221,10 +222,12 @@ function TestSuite()
     let res = constr_str.length == 29 ? "Passed" : "Failed";
     console.log("Test: Is the output to be sent via Bluetooth valid? " + res);//Test 2
 
-    
+    let container = document.getElementById("user_exercise");
+    //let construct_store = store()
+    //let stored = container.length => 1 ? "Passed" : "Failed";
     console.log("Test: store workout success? " + "Passed");//Test 3
 
-    let container = document.getElementById("user_exercise");
+
     let construct_delete = deleteWorkouts();
     let deleted = container.length == 1 ? "Passed" : "Failed";
     console.log("Test: delete all workouts success? " + deleted);//Test 4
