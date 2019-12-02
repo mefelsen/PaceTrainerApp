@@ -37,6 +37,11 @@ function getSelectValue()
         document.getElementById('num_times1').innerHTML = "# of Times";
         document.getElementById('connectButton').innerHTML = "Connect";
         document.getElementById('mode').innerHTML = "Mode";
+        document.getElementById('test').innerHTML = "Test Suite";
+        document.getElementById('message').innerHTML = "Test.";
+        document.getElementById('breakout').innerHTML = "Breakout";
+        document.getElementById('breakout1').innerHTML = "Breakout Distance (m/yd)";
+        document.getElementById('breakout2').innerHTML = "Breakout Speed (%)";
     }
     else if(langvalue == "2")
     {
@@ -71,6 +76,11 @@ function getSelectValue()
         document.getElementById('num_times1').innerHTML = "# de Repeticiones";
         document.getElementById('connectButton').innerHTML = "Conectar";
         document.getElementById('mode').innerHTML = "Modo";
+        document.getElementById('test').innerHTML = "Banco de Pruebas";
+        document.getElementById('message').innerHTML = "Prueba.";
+        document.getElementById('breakout').innerHTML = "Salida";
+        document.getElementById('breakout1').innerHTML = "Distancia de Salida (m/yd)";
+        document.getElementById('breakout2').innerHTML = "Velocidad de Salida (%)";
     }
 }
 
