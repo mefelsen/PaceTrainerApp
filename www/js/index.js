@@ -16,6 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ /** [Member of index.js]
+ * Constructs an app variable to initialize and communicate with microcontroller via Bluetooth
+ * @pre Must know the macAddress of device being connected to
+ * @post Writes data to the arduino bluetooth device
+ */
  var app = {
      macAddress: "A4:CF:12:75:A6:56",  // get your mac address from bluetoothSerial.list
      chars: "",
